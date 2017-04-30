@@ -120,7 +120,11 @@ public class FrameTable {
                         return true;
                     }
                     else {
-                        table.get(i).setSecondChance();
+                        Frame tmpFr = table.get(i);
+                        tmpFr.setSecondChance();
+                        table.remove(i);
+                        table.addFirst(tmpFr);
+                        //table.get(i).setSecondChance();
                     }
                 }
                 table.removeLast();
